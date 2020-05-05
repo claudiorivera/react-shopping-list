@@ -3,8 +3,20 @@
   "version": "1.0.0",
   "description": "A shopping list app built with the MERN stack for a Traversy Media course.",
   "main": "server.js",
+  "scripts": {
+    "start": "node server",
+    "server": "nodemon server"
+  },
   "repository": "https://github.com/claudiorivera/react-shopping-list",
   "author": "Claudio Rivera",
   "license": "MIT",
-  "private": true
+  "private": true,
+  "dependencies": {
+    "concurrently": "^5.2.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.9.12"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.3"
+  }
 }
