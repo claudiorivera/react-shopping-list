@@ -24,6 +24,9 @@ mongoose
   .then(() => console.log("DB connected..."))
   .catch((error) => console.log(error));
 
+// Routes
+app.use("/api/items", require("./routes/api/items"));
+
 // Start server
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
