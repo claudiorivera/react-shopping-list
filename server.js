@@ -21,7 +21,7 @@ mongoose.set("useUnifiedTopology", true);
 // DB connect
 mongoose
   .connect(MONGO_URI)
-  .then(() => console.log("DB connected..."))
+  .then(() => console.log("DB connected"))
   .catch((error) => console.log(error));
 
 // Routes
