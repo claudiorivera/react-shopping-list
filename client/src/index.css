@@ -10,3 +10,8 @@ html {
   -moz-box-sizing: inherit;
   box-sizing: inherit;
 }
+
+body {
+  margin: 0;
+  padding: 0;
+}
