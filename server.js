@@ -21,11 +21,16 @@ mongoose.set("useUnifiedTopology", true);
 // DB connect
 mongoose
   .connect(MONGO_URI)
-  .then(() => console.log("DB connected"))
+  .then(() => console.log("Database connected"))
   .catch((error) => console.log(error));
 
-// Routes
-app.use("/api/items", require("./routes/api/items"));
+// Get default connection and bind to error event
+const db = mongoose.connection;
+db.on("error", console.error.bind(console, "connection error:"));
+
+// Use express router
+const items = require("./routes/items");
+app.use("/items", items);
 
 // Start server
 app.listen(PORT, () => {

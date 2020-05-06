@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "start": "node server",
-    "server": "nodemon server"
+    "server": "nodemon server",
+    "dev": "nodemon server"
   },
   "repository": "https://github.com/claudiorivera/react-shopping-list",
   "author": "Claudio Rivera",
