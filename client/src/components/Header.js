@@ -1,6 +1,11 @@
 import React from "react";
-import "../styles/Header.css";
+import Jumbotron from "react-bootstrap/Jumbotron";
+import Container from "react-bootstrap/Container";
 
 export default function Header() {
-  return <div className="Header">Shopping List</div>;
+  return (
+    <Container fluid>
+      <Jumbotron fluid>Hello World</Jumbotron>
+    </Container>
+  );
 }
