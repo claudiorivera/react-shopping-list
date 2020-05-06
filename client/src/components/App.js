@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Header from "../components/Header";
 import Shoppinglist from "../components/ShoppingList";
 import Container from "react-bootstrap/Container";
-import ShoppingListAdd from "./ShoppingListAdd";
+import ShoppingListForm from "./ShoppingListForm";
 
 export default class App extends Component {
   constructor(props) {
@@ -13,8 +13,11 @@ export default class App extends Component {
   }
 
   async componentDidMount() {
-    const axios = require("axios").default;
+    this.getItems();
+  }
 
+  async getItems() {
+    const axios = require("axios").default;
     try {
       const response = await axios.get("/items");
       this.setState({
@@ -25,12 +28,26 @@ export default class App extends Component {
     }
   }
 
+  async addItem() {
+    const axios = require("axios").default;
+
+    axios({
+      method: "post",
+      url: "/items",
+      data: {
+        name: "placeholder",
+      },
+    });
+  }
+
   render() {
     return (
       <Container>
         <Header />
-        <ShoppingListAdd items={this.state.items} />
-        <Shoppinglist items={this.state.items} />
+        <Container>
+          <ShoppingListForm onSubmit={this.addItem} />
+          <Shoppinglist items={this.state.items} />
+        </Container>
       </Container>
     );
   }
