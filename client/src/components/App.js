@@ -3,6 +3,7 @@ import Header from "../components/Header";
 import Shoppinglist from "../components/ShoppingList";
 import ShoppingListForm from "./ShoppingListForm";
 import axios from "axios";
+import "./styles/App.css";
 
 export default class App extends Component {
   constructor(props) {
@@ -53,7 +54,7 @@ export default class App extends Component {
 
   render() {
     return (
-      <div className="container">
+      <div className="App">
         <Header />
         <div className="container">
           <ShoppingListForm addItem={this.addItem} />
