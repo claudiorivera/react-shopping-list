@@ -7,7 +7,7 @@
     "start": "node server",
     "server": "nodemon server",
     "client": "npm start --prefix client",
-    "client-install": "yarn install --prefix client",
+    "client-build": "npm run build --prefix client",
     "dev": "concurrently --names 'SERVER,CLIENT' -c 'bgBlue.bold,bgMagenta.bold' 'npm:server' 'npm:client'"
   },
   "repository": "https://github.com/claudiorivera/react-shopping-list",
