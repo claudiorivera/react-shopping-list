@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Button from "react-bootstrap/Button";
 
 export default class ShoppingListItem extends Component {
   onClick = (event) => {
@@ -9,13 +8,13 @@ export default class ShoppingListItem extends Component {
   render() {
     return (
       <div className="container d-flex align-items-center list-group-item">
-        <Button
-          variant="danger"
+        <button
+          className="btn btn-danger"
           onClick={this.onClick}
           id={this.props.item._id}
         >
           X
-        </Button>
+        </button>
         <div className="container">{this.props.item.name}</div>
       </div>
     );

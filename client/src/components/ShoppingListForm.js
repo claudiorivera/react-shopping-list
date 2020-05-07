@@ -1,7 +1,4 @@
 import React, { Component } from "react";
-import FormControl from "react-bootstrap/FormControl";
-import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button";
 
 export default class ShoppingListForm extends Component {
   constructor(props) {
@@ -21,9 +18,11 @@ export default class ShoppingListForm extends Component {
 
   render() {
     return (
-      <Form onSubmit={this.handleSubmit}>
+      <form onSubmit={this.handleSubmit}>
         <div className="input-group mb-3">
-          <FormControl
+          <input
+            type="text"
+            className="form-control"
             placeholder="Add item"
             aria-label="Add item"
             aria-describedby="basic-addon2"
@@ -31,12 +30,12 @@ export default class ShoppingListForm extends Component {
             onChange={this.handleChange}
           />
           <div className="input-group-append">
-            <Button variant="primary" type="submit">
+            <button className="btn btn-success" type="submit">
               Add
-            </Button>
+            </button>
           </div>
         </div>
-      </Form>
+      </form>
     );
   }
 }
