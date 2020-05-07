@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 
 // Environmental values
 const PORT = process.env.PORT;
-const MONGO_URI = process.env.MONGO_URI;
+const DB_URI = process.env.DB_URI;
 
 // Instantiate Express
 const app = express();
@@ -20,7 +20,7 @@ mongoose.set("useUnifiedTopology", true);
 
 // DB connect
 mongoose
-  .connect(MONGO_URI)
+  .connect(DB_URI)
   .then(() => console.log("Database connected"))
   .catch((error) => console.log(error));
 
