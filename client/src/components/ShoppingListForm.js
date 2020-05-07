@@ -15,8 +15,8 @@ export default class ShoppingListForm extends Component {
   };
 
   handleSubmit = (event) => {
-    console.log("A name was submitted: " + this.state.value);
     event.preventDefault();
+    this.props.addItem(this.state.value);
   };
 
   render() {

@@ -1,11 +1,18 @@
 import React from "react";
 import ListGroup from "react-bootstrap/ListGroup";
+import ShoppingListItem from "../components/ShoppingListItem";
 
 export default function ShoppingList(props) {
   return (
-    <ListGroup>
+    <ListGroup variant="flush">
       {props.items.map((item) => {
-        return <ListGroup.Item key={item._id}>{item.name}</ListGroup.Item>;
+        return (
+          <ShoppingListItem
+            item={item}
+            key={item._id}
+            deleteItem={props.deleteItem}
+          />
+        );
       })}
     </ListGroup>
   );

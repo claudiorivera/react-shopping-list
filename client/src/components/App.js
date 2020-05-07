@@ -3,6 +3,7 @@ import Header from "../components/Header";
 import Shoppinglist from "../components/ShoppingList";
 import Container from "react-bootstrap/Container";
 import ShoppingListForm from "./ShoppingListForm";
+import axios from "axios";
 
 export default class App extends Component {
   constructor(props) {
@@ -12,12 +13,11 @@ export default class App extends Component {
     };
   }
 
-  async componentDidMount() {
+  componentDidMount() {
     this.getItems();
   }
 
-  async getItems() {
-    const axios = require("axios").default;
+  getItems = async () => {
     try {
       const response = await axios.get("/items");
       this.setState({
@@ -26,27 +26,39 @@ export default class App extends Component {
     } catch (error) {
       console.error(error);
     }
-  }
+  };
 
-  async addItem() {
-    const axios = require("axios").default;
+  addItem = async (item) => {
+    try {
+      await axios({
+        method: "post",
+        url: "/items",
+        data: {
+          name: item,
+        },
+      });
+    } catch (error) {
+      console.error(error);
+    }
+    this.getItems();
+  };
 
-    axios({
-      method: "post",
-      url: "/items",
-      data: {
-        name: "placeholder",
-      },
-    });
-  }
+  deleteItem = async (id) => {
+    try {
+      await axios.delete(`/items/${id}`);
+    } catch (error) {
+      console.error(error);
+    }
+    this.getItems();
+  };
 
   render() {
     return (
       <Container>
         <Header />
         <Container>
-          <ShoppingListForm onSubmit={this.addItem} />
-          <Shoppinglist items={this.state.items} />
+          <ShoppingListForm addItem={this.addItem} />
+          <Shoppinglist items={this.state.items} deleteItem={this.deleteItem} />
         </Container>
       </Container>
     );
