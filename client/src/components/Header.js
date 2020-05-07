@@ -1,6 +1,12 @@
 import React from "react";
-import Jumbotron from "react-bootstrap/Jumbotron";
 
 export default function Header() {
-  return <Jumbotron className="mt-3">Shopping List</Jumbotron>;
+  return (
+    <div
+      style={{ fontFamily: "Lobster, cursive" }}
+      className="mb-3 display-3 text-center"
+    >
+      Shopping List
+    </div>
+  );
 }

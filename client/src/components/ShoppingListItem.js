@@ -1,7 +1,5 @@
 import React, { Component } from "react";
-import ListGroup from "react-bootstrap/ListGroup";
 import Button from "react-bootstrap/Button";
-import Container from "react-bootstrap/Container";
 
 export default class ShoppingListItem extends Component {
   onClick = (event) => {
@@ -10,10 +8,7 @@ export default class ShoppingListItem extends Component {
   };
   render() {
     return (
-      <ListGroup.Item
-        key={this.props.item._id}
-        className="d-flex align-items-center"
-      >
+      <div className="container d-flex align-items-center list-group-item">
         <Button
           variant="danger"
           onClick={this.onClick}
@@ -21,8 +16,8 @@ export default class ShoppingListItem extends Component {
         >
           X
         </Button>
-        <Container>{this.props.item.name}</Container>
-      </ListGroup.Item>
+        <div className="container">{this.props.item.name}</div>
+      </div>
     );
   }
 }

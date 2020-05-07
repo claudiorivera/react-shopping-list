@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import Header from "../components/Header";
 import Shoppinglist from "../components/ShoppingList";
-import Container from "react-bootstrap/Container";
 import ShoppingListForm from "./ShoppingListForm";
 import axios from "axios";
 
@@ -54,13 +53,13 @@ export default class App extends Component {
 
   render() {
     return (
-      <Container>
+      <div className="container">
         <Header />
-        <Container>
+        <div className="container">
           <ShoppingListForm addItem={this.addItem} />
           <Shoppinglist items={this.state.items} deleteItem={this.deleteItem} />
-        </Container>
-      </Container>
+        </div>
+      </div>
     );
   }
 }
