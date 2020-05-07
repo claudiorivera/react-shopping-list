@@ -7,9 +7,8 @@
     "start": "node server",
     "server": "nodemon server",
     "client": "yarn --cwd client start",
-    "client-build": "yarn --cwd client build",
-    "client-install": "yarn --cwd client install",
-    "dev": "concurrently --names 'SERVER,CLIENT' -c 'bgBlue.bold,bgMagenta.bold' 'npm:server' 'npm:client'"
+    "build": "yarn --cwd client install && yarn --cwd client build",
+    "dev": "concurrently --names 'SERVER,CLIENT' -c 'bgBlue.bold,bgMagenta.bold' npm:server npm:client"
   },
   "repository": "https://github.com/claudiorivera/react-shopping-list",
   "author": "Claudio Rivera",
