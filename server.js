@@ -35,7 +35,7 @@ app.use("/items", items);
 
 // Serve client/build folder in production
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static(path(__dirname, "client", "build")));
+  app.use(express.static(path.join(__dirname, "client", "build")));
 }
 
 // Start server
