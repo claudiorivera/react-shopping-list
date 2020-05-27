@@ -1,9 +1,10 @@
 require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
+const path = require("path");
 
 // Environmental values
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 5000;
 const DB_URI = process.env.DB_URI;
 
 // Instantiate Express
@@ -31,6 +32,11 @@ db.on("error", console.error.bind(console, "connection error:"));
 // Use express router
 const items = require("./routes/items");
 app.use("/items", items);
+
+// Serve client/build folder in production
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path(__dirname, "client", "build")));
+}
 
 // Start server
 app.listen(PORT, () => {
