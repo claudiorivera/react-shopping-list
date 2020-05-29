@@ -1,3 +1,4 @@
+import "react-devtools"; // Standalone react-devtools for Safari - Remove for production
 import React from "react";
 import ReactDOM from "react-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
