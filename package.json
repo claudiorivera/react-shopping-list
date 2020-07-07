@@ -8,9 +8,8 @@
     "server-start": "nodemon server",
     "client-start": "yarn --cwd client start",
     "client-install": "yarn --cwd client",
-    "devtools-start": "npx react-devtools",
     "build": "yarn --cwd client install && yarn --cwd client build",
-    "dev": "concurrently --names 'SERVER,CLIENT,DEVTOOLS' -c 'bgBlue.bold,bgMagenta.bold,bgCyan.bold' npm:server-start npm:client-start npm:devtools-start"
+    "dev": "concurrently --names 'SERVER,CLIENT' -c 'bgBlue.bold,bgMagenta.bold,bgCyan.bold' npm:server-start npm:client-start"
   },
   "repository": "https://github.com/claudiorivera/react-shopping-list",
   "author": "Claudio Rivera",
@@ -23,7 +22,6 @@
     "mongoose": "^5.9.18"
   },
   "devDependencies": {
-    "nodemon": "^2.0.4",
-    "react-devtools": "^4.7.0"
+    "nodemon": "^2.0.4"
   }
 }
