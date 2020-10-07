@@ -1,6 +1,6 @@
 # react-shopping-list
 
-A shopping list app built with the MERN stack, which was made for a Traversy Media course.
+A shopping list app built with the MERN stack, which was made for a Traversy Media course. Update: I made a [new version](https://github.com/claudiorivera/shopping-list) that uses Vercel serverless API routes, instead of Express.
 
 # Install
 
