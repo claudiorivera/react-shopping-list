@@ -1,15 +1,17 @@
-# react-shopping-list
+# Shopping List
 
-A shopping list app built with the MERN stack, which was made for a Traversy Media course. Update: I made a [new version](https://github.com/claudiorivera/shopping-list) that uses Vercel serverless API routes, instead of Express.
+This is an updated version of my original shopping list app, refactored to use [Next.js](https://nextjs.org/)'s serverless API routes, and deployed on [Vercel](https://vercel.com/).
+
+It uses the excellent [Vercel SWR](https://swr.vercel.app/) for data fetching.
 
 # Install
 
-`yarn && yarn run client-install`
+`yarn`
 
 # Config
 
-Add a `.env` file with a `DB_URI` value for a MongoDB connection string.
+Add a `.env.local` file with a `DB_URI` value for a MongoDB connection string.
 
 # Dev
 
-`yarn run dev`
+`yarn dev`

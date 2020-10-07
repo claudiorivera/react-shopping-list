@@ -1,27 +1,19 @@
 {
-  "name": "react-shopping-list",
-  "version": "1.0.4",
-  "description": "A shopping list app built with the MERN stack for a Traversy Media course.",
-  "main": "server.js",
-  "scripts": {
-    "start": "node server",
-    "server-start": "nodemon server",
-    "client-start": "yarn --cwd client start",
-    "client-install": "yarn --cwd client",
-    "build": "yarn --cwd client install && yarn --cwd client build",
-    "dev": "concurrently --names 'SERVER,CLIENT' -c 'bgBlue.bold,bgMagenta.bold,bgCyan.bold' npm:server-start npm:client-start"
-  },
-  "repository": "https://github.com/claudiorivera/react-shopping-list",
-  "author": "Claudio Rivera",
-  "license": "MIT",
+  "name": "shopping-list",
+  "version": "0.1.0",
   "private": true,
-  "dependencies": {
-    "concurrently": "^5.2.0",
-    "dotenv": "^8.2.0",
-    "express": "^4.17.1",
-    "mongoose": "^5.9.18"
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
   },
-  "devDependencies": {
-    "nodemon": "^2.0.4"
+  "dependencies": {
+    "axios": "^0.20.0",
+    "bootstrap": "^4.5.2",
+    "mongoose": "^5.10.7",
+    "next": "9.5.3",
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
+    "swr": "^0.3.5"
   }
 }

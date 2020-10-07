@@ -1,16 +1,14 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 
-// Create Mongoose Schema
-const itemSchema = new mongoose.Schema({
-  name: {
+const ItemSchema = new mongoose.Schema({
+  description: {
     type: String,
     required: true,
   },
-  date: {
+  dateCreated: {
     type: Date,
     default: Date.now,
   },
 });
 
-// Compile Schema into Model and export
-module.exports = mongoose.model("Item", itemSchema);
+export default mongoose.models.Item || mongoose.model("Item", ItemSchema);
