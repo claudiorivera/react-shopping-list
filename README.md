@@ -10,7 +10,7 @@ It uses the excellent [Vercel SWR](https://swr.vercel.app/) for data fetching.
 
 # Config
 
-Add a `.env.local` file with a `DB_URI` value for a MongoDB connection string.
+Add a `.env.local` file with a `MONGODB_URI` connection string.
 
 # Dev
 
