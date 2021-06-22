@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "axios": "0.21.1",
-    "bootstrap": "5.0.1",
+    "bootstrap": "5.0.2",
     "mongoose": "5.12.14",
     "next": "11.0.0",
     "react": "17.0.2",
